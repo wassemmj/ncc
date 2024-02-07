@@ -29,7 +29,10 @@ class _ContactUsViewState extends State<ContactUsView> {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
+    double height = MediaQuery
+        .of(context)
+        .size
+        .height;
     return Scaffold(
       appBar: AppBar(
         leading: Container(
@@ -62,7 +65,9 @@ class _ContactUsViewState extends State<ContactUsView> {
                     ),
                   );
                 }
-                if (BlocProvider.of<FooterCubit>(context).footer == null) {
+                if (BlocProvider
+                    .of<FooterCubit>(context)
+                    .footer == null) {
                   return Container(
                     alignment: Alignment.center,
                     height: height * 0.8,
@@ -73,8 +78,10 @@ class _ContactUsViewState extends State<ContactUsView> {
                   );
                 }
                 var footer =
-                BlocProvider.of<FooterCubit>(context).footer['message'];
-                return footer != "Footer information is empty" ?  Column(
+                BlocProvider
+                    .of<FooterCubit>(context)
+                    .footer['message'];
+                return footer != "Footer information is empty" ? Column(
                   children: [
                     CircleAvatar(
                       radius: height * 0.1,
@@ -112,16 +119,20 @@ class _ContactUsViewState extends State<ContactUsView> {
                     ),
                     SizedBox(height: height * 0.05),
                     FooterText(
-                        text1: Icons.email_outlined, text2: footer[0]['email'], email: true,),
+                      text1: Icons.email_outlined,
+                      text2: footer[0]['email'],
+                      email: true,),
                     FooterText(
-                        text1: Icons.phone,
-                        text2: footer[0]['numberOne'].toString(), email: false,),
+                      text1: Icons.phone,
+                      text2: footer[0]['numberOne'].toString(), email: false,),
                     FooterText(
-                        text1: Icons.phone,
-                        text2: footer[0]['numberTwo'].toString(), email: false,),
-                    FooterText(
-                        text1: Icons.phone,
-                        text2: footer[0]['numberThree'].toString(), email: false,),
+                      text1: Icons.phone,
+                      text2: footer[0]['numberTwo'].toString(), email: false,),
+                    footer[0]['numberThree'] == null
+                        ? FooterText(
+                      text1: Icons.phone,
+                      text2: footer[0]['numberThree'].toString(), email: false,)
+                        : Container(),
                     SizedBox(height: height * 0.02),
                     const Divider(
                       color: Colors.black54,

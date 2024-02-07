@@ -140,9 +140,9 @@ class _CompanyInfoViewState extends State<CompanyInfoView> {
                           FooterText(
                               text1: Icons.phone,
                               text2: footer[0]['numberTwo'].toString(), email: false,),
-                          FooterText(
+                          footer[0]['numberTwo'] == null ?  FooterText(
                               text1: Icons.phone,
-                              text2: footer[0]['numberThree'].toString(), email: false,),
+                              text2: footer[0]['numberThree'].toString(), email: false,) : Container(),
                           SizedBox(height: height * 0.02),
                           const Divider(
                             color: Colors.black54,
@@ -211,7 +211,7 @@ class _CompanyInfoViewState extends State<CompanyInfoView> {
   }
 
   whatsapp(phone) async {
-    var contact = '+963$phone';
+    var contact = '$phone';
     var androidUrl = "whatsapp://send?phone=$contact";
     var iosUrl = "https://wa.me/$contact";
     try {

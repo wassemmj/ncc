@@ -92,7 +92,7 @@ class _NotificationAdminViewState extends State<NotificationAdminView> {
                           borderSide: BorderSide(
                               color: Colors.black54.withOpacity(0.05))),
                       title: Text(
-                        data['mesasge'],
+                        data['message'],
                         style: const TextStyle(
                             color: Color1.black,
                             fontSize: 17,

@@ -61,20 +61,30 @@ class _ProductWidgetState extends State<ProductWidget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Container(
+              SizedBox(
                 width: width,
                 height: height * 0.2,
-                decoration: BoxDecoration(
+                child: Container(
+                  decoration: BoxDecoration(
                     color: Colors.black12.withOpacity(0.04),
                     borderRadius: BorderRadius.circular(15),
-                    image: DecorationImage(
-                      image: NetworkImage(
-                        '${Api.apiImage}/images/${widget.image}',
-                      ),
-                      fit: BoxFit.contain,
-                    )),
+                    // image: DecorationImage(
+                    //   image: NetworkImage(
+                    //     '${Api.apiImage}/images/${widget.image}',
+                    //   ),
+                    //   fit: BoxFit.contain,
+                    // ),
+                  ),
+                  child: OverflowBox(
+                    minHeight: 0,
+                    maxHeight: width * 0.25,
+                    child: Image.network(
+                      '${Api.apiImage}/images/${widget.image}',
+                    ),
+                  ),
+                ),
               ),
-              SizedBox(height: height / 85),
+              SizedBox(height: height * 0.01),
               SizedBox(
                 width: width / 2.2,
                 child: Text(
@@ -88,7 +98,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                   maxLines: 3,
                 ),
               ),
-              SizedBox(height: height / 85),
+              SizedBox(height: height * 0.01 ,),
               Row(
                 children: [
                   Column(

@@ -19,12 +19,19 @@ class ProductOut extends StatefulWidget {
 }
 
 class _ProductOutState extends State<ProductOut> {
-  String? value = 'desc';
+  String? value = 'Z -> A';
   List<String> items = [
     'desc',
     'asc',
     'Hprice',
     'Lprice',
+  ];
+
+  List<String> items1 = [
+    'Z -> A',
+    'A -> Z',
+    'Height Price',
+    'Low Price',
   ];
 
   @override

@@ -41,43 +41,6 @@ class Profile_Nav extends StatelessWidget {
                   )),
               child: const ProfileTile(
                   iconData: FontAwesomeIcons.cartPlus, text: 'My All Order')),
-          SizedBox(height: height * 0.02),
-          // Container(
-          //   decoration: const BoxDecoration(
-          //       color: Color1.white,
-          //       boxShadow: [
-          //         BoxShadow(
-          //           color: Colors.grey,
-          //           offset: Offset(0.0, 1.0), //(x,y)
-          //           blurRadius: 6.0,
-          //         ),
-          //       ],
-          //       borderRadius:  BorderRadius.only(bottomRight: Radius.circular(50))
-          //   ),
-          //   padding: EdgeInsets.all(height * 0.02),
-          //   child: Column(
-          //     crossAxisAlignment: CrossAxisAlignment.start,
-          //     children: [
-          //       const Text(
-          //         'My Orders',
-          //         style: TextStyle(
-          //           color: Color1.black,
-          //           fontSize: 20,
-          //           fontWeight: FontWeight.w600,
-          //         ),
-          //       ),
-          //       SizedBox(height: height * 0.02),
-          //       Row(
-          //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //         children: const [
-          //           OrderButton(iconData: Icons.done, text: 'Accepted', color: Colors.green,),
-          //           OrderButton(iconData: FontAwesomeIcons.x, text: 'rejected', color: Colors.red,),
-          //           OrderButton(iconData: Icons.access_time_outlined, text: 'Pending', color: Color1.black,),
-          //         ],
-          //       ),
-          //     ],
-          //   ),
-          // ),
         ],
       ),
     );

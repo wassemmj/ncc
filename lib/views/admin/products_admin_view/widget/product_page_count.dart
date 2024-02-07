@@ -14,7 +14,7 @@ class ProductPageCount extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return SizedBox(
-      height: height * 0.04,
+      height: height * 0.042,
       child: Container(
         alignment: Alignment.center,
         child: ListView.builder(
@@ -25,6 +25,7 @@ class ProductPageCount extends StatelessWidget {
             return InkWell(
               onTap: () => onPressed(index),
               child: Container(
+                alignment: Alignment.center,
                 padding: const EdgeInsets.all(6),
                 margin: const EdgeInsets.symmetric(
                     horizontal: 5),
@@ -42,7 +43,7 @@ class ProductPageCount extends StatelessWidget {
                       color: pageIndex == index
                           ? Color1.white
                           : Color1.primaryColor,
-                      fontSize: 17,
+                      fontSize: height * 0.02,
                       fontWeight: FontWeight.w500),
                 ),
               ),

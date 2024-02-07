@@ -36,12 +36,19 @@ class _ShowMoreViewState extends State<ShowMoreView> {
 
   int pageIndex = 0;
 
-  String? value = 'desc';
+  String? value = 'Z -> A';
   List<String> items = [
     'desc',
     'asc',
     'Hprice',
     'Lprice',
+  ];
+
+  List<String> items1 = [
+    'Z -> A',
+    'A -> Z',
+    'Height Price',
+    'Low Price',
   ];
 
   @override
@@ -139,7 +146,7 @@ class _ShowMoreViewState extends State<ShowMoreView> {
                             height: height * 0.045,
                             alignment: Alignment.topRight,
                             child: DropdownButton(
-                              items: items.map((String items) {
+                              items: items1.map((String items) {
                                 return DropdownMenuItem(
                                   value: items,
                                   child: Text(items),
@@ -154,13 +161,13 @@ class _ShowMoreViewState extends State<ShowMoreView> {
                                 });
                                 if (widget.type == 'new') {
                                   await BlocProvider.of<HomeCubit>(context)
-                                      .getNewProduct(values!);
+                                      .getNewProduct(items[items1.indexOf(values!)]);
                                 } else if (widget.type == 'used') {
                                   await BlocProvider.of<HomeCubit>(context)
-                                      .getUsedProduct(values!);
+                                      .getUsedProduct(items[items1.indexOf(values!)]);
                                 } else {
                                   await BlocProvider.of<HomeCubit>(context)
-                                      .getDiscountProduct(values!);
+                                      .getDiscountProduct(items[items1.indexOf(values!)]);
                                 }
                               },
                               iconEnabledColor: Color1.primaryColor,

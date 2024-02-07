@@ -30,12 +30,19 @@ class _SectorViewState extends State<SectorView> {
 
   int pageIndex = 0;
 
-  String? value = 'desc';
+  String? value = 'Z -> A';
   List<String> items = [
     'desc',
     'asc',
     'Hprice',
     'Lprice',
+  ];
+
+  List<String> items1 = [
+    'Z -> A',
+    'A -> Z',
+    'Height Price',
+    'Low Price',
   ];
 
   @override
@@ -97,7 +104,7 @@ class _SectorViewState extends State<SectorView> {
                     height: height * 0.045,
                     alignment: Alignment.topRight,
                     child: DropdownButton(
-                      items: items.map((String items) {
+                      items: items1.map((String items) {
                         return DropdownMenuItem(
                           value: items,
                           child: Text(items),
@@ -109,7 +116,7 @@ class _SectorViewState extends State<SectorView> {
                         setState(() {
                           value = values;
                         });
-                        await BlocProvider.of<CatCubit>(context).getSector(widget.secId, values!);
+                        await BlocProvider.of<CatCubit>(context).getSector(widget.secId, items[items1.indexOf(values!)]);
                       },
                       iconEnabledColor: Color1.primaryColor,
                     ),

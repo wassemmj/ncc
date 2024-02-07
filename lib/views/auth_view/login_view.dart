@@ -21,11 +21,14 @@ class LoginView extends StatefulWidget {
   State<LoginView> createState() => _LoginViewState();
 }
 
+// '0959860097'
+// userTest2@gmail.com'
+
 class _LoginViewState extends State<LoginView> {
-  var emailController = TextEditingController(text: 'userTest2@gmail.com');
-  var passwordController = TextEditingController(text: '0959860097');
-  var passwordCoController = TextEditingController(text: '123456789');
-  var usernameController = TextEditingController(text: 'wasm');
+  var emailController = TextEditingController();
+  var passwordController = TextEditingController();
+  var passwordCoController = TextEditingController();
+  var usernameController = TextEditingController();
 
   GlobalKey formKey = GlobalKey();
 

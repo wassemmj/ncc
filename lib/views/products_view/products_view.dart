@@ -33,12 +33,19 @@ class _ProductsViewState extends State<ProductsView> {
 
   int pageIndex = 0;
 
-  String? value = 'desc';
+  String? value = 'Z -> A';
   List<String> items = [
     'desc',
     'asc',
     'Hprice',
     'Lprice',
+  ];
+
+  List<String> items1 = [
+    'Z -> A',
+    'A -> Z',
+    'Height Price',
+    'Low Price',
   ];
 
   @override
@@ -102,7 +109,7 @@ class _ProductsViewState extends State<ProductsView> {
                                   height: height * 0.045,
                                   alignment: Alignment.topRight,
                                   child: DropdownButton(
-                                    items: items.map((String items) {
+                                    items: items1.map((String items) {
                                       return DropdownMenuItem(
                                         value: items,
                                         child: Text(items),
@@ -115,7 +122,7 @@ class _ProductsViewState extends State<ProductsView> {
                                         value = values;
                                       });
                                       await BlocProvider.of<CatCubit>(context)
-                                          .getProduct(widget.sectorId, values!);
+                                          .getProduct(widget.sectorId, items[items1.indexOf(values!)]);
                                     },
                                     iconEnabledColor: Color1.primaryColor,
                                   ),

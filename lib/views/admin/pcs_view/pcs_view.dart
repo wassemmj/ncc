@@ -5,7 +5,6 @@ import 'package:ncc_app/views/admin/create_category/create_category.dart';
 import 'package:ncc_app/views/admin/pcs_view/widget/pcs_widget.dart';
 import 'package:ncc_app/views/awidget/loading_widget.dart';
 
-import '../../../core/color1.dart';
 import '../../../core/style.dart';
 import '../../../logic/cat_cubit/cat_cubit.dart';
 import '../../nav_view/widget/appbar_icon.dart';
@@ -21,7 +20,7 @@ class _PCSViewState extends State<PCSView> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
-      BlocProvider.of<CatCubit>(context).getCat();
+      await BlocProvider.of<CatCubit>(context , listen: false,).getCat();
     });
     super.initState();
   }

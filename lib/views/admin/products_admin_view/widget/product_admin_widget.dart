@@ -48,7 +48,7 @@ class ProductAdminWidget extends StatelessWidget {
                     ),
                     fit: BoxFit.contain)),
           ),
-          SizedBox(height: height / 85),
+          SizedBox(height: height * 0.01),
           SizedBox(
             width: width / 2.2,
             child: Text(
@@ -62,7 +62,7 @@ class ProductAdminWidget extends StatelessWidget {
               maxLines: 3,
             ),
           ),
-          SizedBox(height: height / 85),
+          SizedBox(height: height * 0.01),
           Row(
             children: [
               Column(

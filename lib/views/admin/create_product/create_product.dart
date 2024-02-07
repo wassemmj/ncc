@@ -9,6 +9,7 @@ import 'package:ncc_app/views/admin/create_product/widget/create_product_chapert
 import 'package:ncc_app/views/admin/create_product/widget/create_product_chapter_two.dart';
 
 import '../../../core/style.dart';
+import '../../../logic/cat_cubit/cat_cubit.dart';
 import '../../nav_view/widget/appbar_icon.dart';
 
 class CreateProduct extends StatefulWidget {
@@ -46,6 +47,14 @@ class _CreateProductState extends State<CreateProduct> {
 
   var activeId = TextEditingController();
   var funType = TextEditingController();
+
+  @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
+      await BlocProvider.of<CatCubit>(context,listen: false).getCat();
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

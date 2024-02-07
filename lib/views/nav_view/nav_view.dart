@@ -12,7 +12,6 @@ import 'package:ncc_app/views/home_view/home_view.dart';
 import 'package:ncc_app/views/nav_view/widget/appbar_icon.dart';
 import 'package:ncc_app/views/profile_view/profile_view.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shrink_sidemenu/shrink_sidemenu.dart';
 
 import '../../core/color1.dart';
@@ -83,14 +82,6 @@ class _NavViewState extends State<NavView> {
             'My cart' ,
             style: Style.textStyle23,
           ),
-          actions: [
-            AppbarIcon(
-              icon: Icons.car_crash_outlined,
-              onPressed: () {},
-              color: Colors.black54.withOpacity(0.03),
-            ),
-            SizedBox(width: (width / 82)),
-          ],
         ),
         'body': const CartView(),
       },

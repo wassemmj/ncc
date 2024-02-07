@@ -22,7 +22,7 @@ class HomeAdvert extends StatelessWidget {
         Stack(
           children: [
             Container(
-              width: width > 300 ?  width - width * 0.12 : width * 0.67,
+              width: height * 0.43,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage(

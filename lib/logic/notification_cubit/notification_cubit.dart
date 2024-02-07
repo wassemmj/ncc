@@ -15,11 +15,12 @@ class NotificationCubit extends Cubit<NotificationState> {
     emit(state.copyWith(status: NotificationStatus.loading));
     try {
       notification = await NotificationRepo.getNotification();
+      print(notification) ;
       emit(state.copyWith(status: NotificationStatus.success));
       var nn = notification['notifications'];
       for(int i = 0;i<nn.length;i++) {
         var f = nn[i]['data'];
-        NotifyServices().showNotification(id: nn[i]['notifiable_id'],title: f['mesasge'],body: f['shipping_address']);
+        NotifyServices().showNotification(id: nn[i]['notifiable_id'],title: f['message'],body: f['shipping_address']);
       }
     } catch (e) {
       emit(state.copyWith(status: NotificationStatus.error));

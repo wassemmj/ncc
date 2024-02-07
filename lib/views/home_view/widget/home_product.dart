@@ -57,13 +57,20 @@ class HomeProduct extends StatelessWidget {
                       decoration: BoxDecoration(
                           color: Colors.black12.withOpacity(0.04),
                           borderRadius: BorderRadius.circular(15),
-                          image: DecorationImage(
-                              image: NetworkImage(
-                                '${Api.apiImage}/images/$image',
-                              ),
-                              fit: BoxFit.contain)),
+                          // image: DecorationImage(
+                          //     image: NetworkImage(
+                          //       '${Api.apiImage}/images/$image',
+                          //     ),
+                          //     fit: BoxFit.contain),
+                      ),
+                      child: OverflowBox(
+                        minHeight: 0,
+                        maxHeight: height * 0.12,
+                        child: Image.network(
+                          '${Api.apiImage}/images/$image',
+                        ),
+                      ),
                     ),
-                    SizedBox(height: height * 0.01),
                     SizedBox(
                       width: width / 2.2,
                       child: Text(
@@ -75,7 +82,6 @@ class HomeProduct extends StatelessWidget {
                         maxLines: 3,
                       ),
                     ),
-                    SizedBox(height: height * 0.01),
                     Row(
                       children: [
                         Column(

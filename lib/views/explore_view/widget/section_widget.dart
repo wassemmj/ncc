@@ -28,13 +28,22 @@ class _SectionWidgetState extends State<SectionWidget> {
 
   int pageIndex = 0;
 
-  String? value = 'desc';
+  String? value = 'Z -> A';
   List<String> items = [
     'desc',
     'asc',
     'Hprice',
     'Lprice',
   ];
+
+  List<String> items1 = [
+    'Z -> A',
+    'A -> Z',
+    'Height Price',
+    'Low Price',
+  ];
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +91,7 @@ class _SectionWidgetState extends State<SectionWidget> {
                 height: height * 0.045,
                 alignment: Alignment.topRight,
                 child: DropdownButton(
-                  items: items.map((String items) {
+                  items: items1.map((String items) {
                     return DropdownMenuItem(
                       value: items,
                       child: Text(items),
@@ -94,7 +103,7 @@ class _SectionWidgetState extends State<SectionWidget> {
                     setState(() {
                       value = values;
                     });
-                    await BlocProvider.of<CatCubit>(context).getSec(widget.catId,values!);
+                    await BlocProvider.of<CatCubit>(context).getSec(widget.catId,items[items1.indexOf(value!)]);
                   },
                   iconEnabledColor: Color1.primaryColor,
                 ),
