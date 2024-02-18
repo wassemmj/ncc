@@ -34,31 +34,34 @@ class _DescriptionState extends State<Description> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
       child: secondHalf.isEmpty
-          ? Text(firstHalf)
+          ? Text(
+              firstHalf,
+        style: Style.textStyle14,
+            )
           : Column(
-        children: <Widget>[
-          Text(
-            flag ? ("$firstHalf...") : (firstHalf + secondHalf),
-            style: Style.textStyle14,
-          ),
-          InkWell(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
                 Text(
-                  flag ? "show more" : "show less",
-                  style: const TextStyle(color: Colors.black),
+                  flag ? ("$firstHalf...") : (firstHalf + secondHalf),
+                  style: Style.textStyle14,
+                ),
+                InkWell(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: <Widget>[
+                      Text(
+                        flag ? "show more" : "show less",
+                        style: const TextStyle(color: Colors.black),
+                      ),
+                    ],
+                  ),
+                  onTap: () {
+                    setState(() {
+                      flag = !flag;
+                    });
+                  },
                 ),
               ],
             ),
-            onTap: () {
-              setState(() {
-                flag = !flag;
-              });
-            },
-          ),
-        ],
-      ),
     );
   }
 }

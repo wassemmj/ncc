@@ -68,9 +68,13 @@ class ProductAdminWidget extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    brand,
-                    style: Style.textStyle14,
+                  SizedBox(
+                    width: width * 0.26,
+                    child: Text(
+                      brand,
+                      overflow: TextOverflow.ellipsis,
+                      style: Style.textStyle14,
+                    ),
                   ),
                   SizedBox(height: height / 85),
                   Text(

@@ -57,11 +57,6 @@ class HomeProduct extends StatelessWidget {
                       decoration: BoxDecoration(
                           color: Colors.black12.withOpacity(0.04),
                           borderRadius: BorderRadius.circular(15),
-                          // image: DecorationImage(
-                          //     image: NetworkImage(
-                          //       '${Api.apiImage}/images/$image',
-                          //     ),
-                          //     fit: BoxFit.contain),
                       ),
                       child: OverflowBox(
                         minHeight: 0,
@@ -87,9 +82,13 @@ class HomeProduct extends StatelessWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              brand,
-                              style: Style.textStyle14,
+                            SizedBox(
+                              width: width * 0.24,
+                              child: Text(
+                                brand,
+                                overflow: TextOverflow.ellipsis,
+                                style: Style.textStyle14,
+                              ),
                             ),
                             SizedBox(height: height * 0.01),
                             Text(

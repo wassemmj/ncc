@@ -104,9 +104,13 @@ class _ProductWidgetState extends State<ProductWidget> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        widget.brand,
-                        style: Style.textStyle14,
+                      SizedBox(
+                        width: width * 0.26,
+                        child: Text(
+                          widget.brand,
+                          overflow: TextOverflow.ellipsis,
+                          style: Style.textStyle14,
+                        ),
                       ),
                       SizedBox(height: height / 85),
                       Text(

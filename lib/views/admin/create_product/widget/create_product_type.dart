@@ -47,7 +47,6 @@ class _CreateProductTypeState extends State<CreateProductType> {
         if (state.status == CatStatus.loading) {
           return Container(
             alignment: Alignment.center,
-            height: height * 0.8,
             child: CircularProgressIndicator(
               color: Color1.primaryColor,
               strokeWidth: 1,
